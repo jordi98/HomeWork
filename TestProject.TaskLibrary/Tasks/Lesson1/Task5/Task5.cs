@@ -31,25 +31,17 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task5
             {
                 Console.WriteLine("Error");
             }
-            try
+            ComplexNumber A = new ComplexNumber(Are, Aim);
+            ComplexNumber B = new ComplexNumber(Bre, Bim);
+            Console.WriteLine($"Sum is {(A + B).Real} + {(A + B).Imaginary}i.\n" +
+                $"Mult is {(A * B).Real} + {(A * B).Imaginary}i.");
+            if (Bre != 0 && Bim != 0)
             {
-                ComplexNumber A = new ComplexNumber(Are, Aim);
-                ComplexNumber B = new ComplexNumber(Bre, Bim);
-                Console.WriteLine($"Sum is {(A + B).Real} + {(A + B).Imaginary}i.\n" +
-                    $"Mult is {(A * B).Real} + {(A * B).Imaginary}i.");
-                if (Bre != 0 && Bim != 0)
-                {
-                    Console.WriteLine($"Div is {(A / B).Real} + {(A / B).Imaginary}i");
-                }
-                else
-                {
-                    Console.WriteLine("Error! Division by 0");
-                }
-                Console.ReadKey();
+                Console.WriteLine($"Div is {(A / B).Real} + {(A / B).Imaginary}i");
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Error! Division by 0");
             }
             Console.WriteLine("-------------------------------------------------------");
         }
