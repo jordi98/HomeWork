@@ -34,7 +34,8 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task4
 
             if (Cx > Ax && Ay > Cy)
             {
-                Console.WriteLine($"Perimeter is {Rectangle.Perimeter(Ax, Ay, Cx, Cy)}.\nSquare is {Rectangle.Square(Ax, Ay, Cx, Cy)}.");
+                Rectangle.SetSides(Ax, Ay, Cx, Cy);
+                Console.WriteLine($"Perimeter is {Rectangle.Perimeter()}.\nSquare is {Rectangle.Square()}.");
             }
             else
             {
