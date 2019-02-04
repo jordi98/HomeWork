@@ -19,8 +19,8 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task2
             get { return bc; }
             set { bc = value; }
         }
-        public double Perimeter { get; set; }
-        public double Square { get; set; }
+        public double Perimeter { get; private set; }
+        public double Square { get; private set; }
 
         public Rectangle(double Ax, double Ay, double Cx, double Cy)
         {
