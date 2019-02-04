@@ -19,16 +19,17 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task4
             get { return bc; }
             set { bc = value; }
         }
-        public static double Perimeter(double Ax, double Ay, double Cx, double Cy)
+        public static void SetSides(double Ax, double Ay, double Cx, double Cy)
         {
             ab = Cx - Ax;
             bc = Ay - Cy;
+        }
+        public static double Perimeter()
+        {            
             return 2 * (ab + bc);
         }
-        public static double Square(double Ax, double Ay, double Cx, double Cy)
+        public static double Square()
         {
-            ab = Cx - Ax;
-            bc = Ay - Cy;
             return ab * bc;
         }
     }
