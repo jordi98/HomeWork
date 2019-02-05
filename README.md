@@ -1,6 +1,7 @@
 # HomeWork
-Lesson tasks
 Made by Yuri Danchyshyn 
+
+Lessons tasks
 
 In folder TestProject.TaskLibrary/Tasks/ there are lessons.
 
