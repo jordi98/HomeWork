@@ -9,7 +9,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task2
     {
         public void Run()
         {
-            Console.WriteLine("--------------------------Task2--------------------");
+            Console.WriteLine("--------------------------Lesson1 Task2--------------------");
             double Ax = 0, Ay = 0, Cx = 0, Cy = 0;
             Console.Write("Input X coordinate of top left rectangle corner: ");
             while (!Double.TryParse(Console.ReadLine(), out Ax))

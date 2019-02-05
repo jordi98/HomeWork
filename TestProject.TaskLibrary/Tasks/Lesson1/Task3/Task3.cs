@@ -9,7 +9,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task3
     {
         public void Run()
         {
-            Console.WriteLine("--------------------------Task3--------------------");
+            Console.WriteLine("--------------------------Lesson1 Task3--------------------");
             double R = 0;
             while (R <= 0)
             {

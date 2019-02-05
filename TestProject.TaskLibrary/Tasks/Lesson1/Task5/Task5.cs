@@ -9,7 +9,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task5
     {
         public void Run()
         {
-            Console.WriteLine("--------------------------Task5--------------------");
+            Console.WriteLine("--------------------------Lesson1 Task5--------------------");
             double Are = 0, Aim = 0, Bre = 0, Bim = 0;
             Console.WriteLine("Number A\nInput real part: ");
             while (!Double.TryParse(Console.ReadLine(), out Are))
