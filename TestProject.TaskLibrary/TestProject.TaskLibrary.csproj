@@ -12,7 +12,6 @@
     <Folder Include="Tasks\Lesson2\Task5\" />
     <Folder Include="Tasks\Lesson2\Task4\" />
     <Folder Include="Tasks\Lesson2\Task3\" />
-    <Folder Include="Tasks\Lesson2\Task2\" />
   </ItemGroup>
 
 </Project>
