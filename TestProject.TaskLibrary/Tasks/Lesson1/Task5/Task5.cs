@@ -7,43 +7,43 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task5
 {
     public class Task5 : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("--------------------------Lesson1 Task5--------------------");
+            console.WriteLine("--------------------------Lesson1 Task5--------------------");
             double Are = 0, Aim = 0, Bre = 0, Bim = 0;
-            Console.WriteLine("Number A\nInput real part: ");
-            while (!Double.TryParse(Console.ReadLine(), out Are))
+            console.WriteLine("Number A\nInput real part: ");
+            while (!Double.TryParse(console.ReadLine(), out Are))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.WriteLine("Input imaginary part: ");
-            while (!Double.TryParse(Console.ReadLine(), out Aim))
+            console.WriteLine("Input imaginary part: ");
+            while (!Double.TryParse(console.ReadLine(), out Aim))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.WriteLine("Number B\nInput real part: ");
-            while (!Double.TryParse(Console.ReadLine(), out Bre))
+            console.WriteLine("Number B\nInput real part: ");
+            while (!Double.TryParse(console.ReadLine(), out Bre))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.WriteLine("Input imaginary part: ");
-            while (!Double.TryParse(Console.ReadLine(), out Bim))
+            console.WriteLine("Input imaginary part: ");
+            while (!Double.TryParse(console.ReadLine(), out Bim))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
             ComplexNumber A = new ComplexNumber(Are, Aim);
             ComplexNumber B = new ComplexNumber(Bre, Bim);
-            Console.WriteLine($"Sum is {(A + B).Real} + {(A + B).Imaginary}i.\n" +
+            console.WriteLine($"Sum is {(A + B).Real} + {(A + B).Imaginary}i.\n" +
                 $"Mult is {(A * B).Real} + {(A * B).Imaginary}i.");
             if (Bre != 0 && Bim != 0)
             {
-                Console.WriteLine($"Div is {(A / B).Real} + {(A / B).Imaginary}i");
+                console.WriteLine($"Div is {(A / B).Real} + {(A / B).Imaginary}i");
             }
             else
             {
-                Console.WriteLine("Error! Division by 0");
+                console.WriteLine("Error! Division by 0");
             }
-            Console.WriteLine("-------------------------------------------------------");
+            console.WriteLine("-------------------------------------------------------");
         }
     }
 }

@@ -9,22 +9,22 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task3
 
     public class Task : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("------------------Lesson2 Task3-----------------------");
+            console.WriteLine("------------------Lesson2 Task3-----------------------");
             int n;
-            Console.Write("Input n: ");
-            while (!Int32.TryParse(Console.ReadLine(), out n))
+            console.Write("Input n: ");
+            while (!Int32.TryParse(console.ReadLine(), out n))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
             if (Enum.IsDefined(typeof(Months), n))
             {
-                Console.WriteLine($"Value n is defined in Enum Months: {(Months)n} ");
+                console.WriteLine($"Value n is defined in Enum Months: {(Months)n} ");
             }
             else
-                Console.WriteLine("n must be 0 <= n < 12 ");
-            Console.WriteLine("--------------------------------------------------");
+                console.WriteLine("n must be 0 <= n < 12 ");
+            console.WriteLine("--------------------------------------------------");
 
         }
     }

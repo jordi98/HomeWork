@@ -7,11 +7,11 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task4
 {    
     public class Task : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("------------------Lesson2 Task4-----------------------");
-            Extensions.Sort();
-            Console.WriteLine("------------------------------------------------------");
+            console.WriteLine("------------------Lesson2 Task4-----------------------");
+            Extensions.Sort(console);
+            console.WriteLine("------------------------------------------------------");
         }
     }
 }

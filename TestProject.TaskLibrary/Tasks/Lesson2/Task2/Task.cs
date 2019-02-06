@@ -7,43 +7,43 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task2
 {
     public class Task : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("------------------Lesson2 Task2-----------------------");
+            console.WriteLine("------------------Lesson2 Task2-----------------------");
             double width = 0, height = 0, x, y;
-            Console.Write("Input width: ");
+            console.Write("Input width: ");
             while (width <= 0)
             {
-                while (!Double.TryParse(Console.ReadLine(), out width))
+                while (!Double.TryParse(console.ReadLine(), out width))
                 {
-                    Console.WriteLine("Error");
+                    console.WriteLine("Error");
                 }
             }            
-            Console.Write("Input height: ");
+            console.Write("Input height: ");
             while (height <= 0)
             {
-                while (!Double.TryParse(Console.ReadLine(), out height))
+                while (!Double.TryParse(console.ReadLine(), out height))
                 {
-                    Console.WriteLine("Error");
+                    console.WriteLine("Error");
                 }
             }
-            Console.Write("Input x: ");
-            while (!Double.TryParse(Console.ReadLine(), out x))
+            console.Write("Input x: ");
+            while (!Double.TryParse(console.ReadLine(), out x))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.Write("Input y: ");
-            while (!Double.TryParse(Console.ReadLine(), out y))
+            console.Write("Input y: ");
+            while (!Double.TryParse(console.ReadLine(), out y))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
             Rectangle rectangle = new Rectangle();
             rectangle.Width = width;
             rectangle.Height = height;
             rectangle.X = x;
             rectangle.Y = y;
-            Console.WriteLine($"Perimeter is {rectangle.Perimeter()}");
-            Console.WriteLine("--------------------------------------------------");
+            console.WriteLine($"Perimeter is {rectangle.Perimeter()}");
+            console.WriteLine("--------------------------------------------------");
 
         }
     }

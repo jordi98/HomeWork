@@ -7,52 +7,51 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task4
 {
     public class Task4 : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("--------------------------Lesson1 Task4--------------------");
+            console.WriteLine("--------------------------Lesson1 Task4--------------------");
             double Ax = 0, Ay = 0, Cx = 0, Cy = 0;
-            Console.Write("Input X coordinate of top left rectangle corner: ");
-            while (!Double.TryParse(Console.ReadLine(), out Ax))
+            console.Write("Input X coordinate of top left rectangle corner: ");
+            while (!Double.TryParse(console.ReadLine(), out Ax))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.Write("Input Y coordinate of top left rectangle corner: ");
-            while (!Double.TryParse(Console.ReadLine(), out Ay))
+            console.Write("Input Y coordinate of top left rectangle corner: ");
+            while (!Double.TryParse(console.ReadLine(), out Ay))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.Write("Input X coordinate of bottom right rectangle corner: ");
-            while (!Double.TryParse(Console.ReadLine(), out Cx))
+            console.Write("Input X coordinate of bottom right rectangle corner: ");
+            while (!Double.TryParse(console.ReadLine(), out Cx))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            Console.Write("Input Y coordinate of bottom right rectangle corner: ");
-            while (!Double.TryParse(Console.ReadLine(), out Cy))
+            console.Write("Input Y coordinate of bottom right rectangle corner: ");
+            while (!Double.TryParse(console.ReadLine(), out Cy))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
 
             if (Cx > Ax && Ay > Cy)
             {
                 Rectangle.SetSides(Ax, Ay, Cx, Cy);
-                Console.WriteLine($"Perimeter is {Rectangle.Perimeter()}.\nSquare is {Rectangle.Square()}.");
+                console.WriteLine($"Perimeter is {Rectangle.Perimeter()}.\nSquare is {Rectangle.Square()}.");
             }
             else
             {
-                Console.WriteLine("Cannot build rectangle! You must input correct values");
+                console.WriteLine("Cannot build rectangle! You must input correct values");
             }
             double R = 0;
             while (R <= 0)
             {
-                Console.Write("Input radius of circle: ");
-                while (!Double.TryParse(Console.ReadLine(), out R))
+                console.Write("Input radius of circle: ");
+                while (!Double.TryParse(console.ReadLine(), out R))
                 {
-                    Console.WriteLine("Error");
+                    console.WriteLine("Error");
                 }
-                //Console.WriteLine("Cannot build circle! You must input correct values");
             }
-            Console.WriteLine($"Length is {Circle.Length(R)}.\nSquare is {Circle.Square(R)}.");
-            Console.WriteLine("-------------------------------------------------------");
+            console.WriteLine($"Length is {Circle.Length(R)}.\nSquare is {Circle.Square(R)}.");
+            console.WriteLine("-------------------------------------------------------");
         }
     }
 }

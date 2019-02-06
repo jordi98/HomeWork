@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestProject.Common.Core.Interfaces;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson2.Task4
 {
@@ -8,11 +9,11 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task4
 
     public static class Extensions
     {
-        public static void Sort()
+        public static void Sort(IConsole console)
         {
             foreach (var item in Enum.GetValues(typeof(Colors)))
             {
-                Console.WriteLine($"{item} = {(int)item}");
+                console.WriteLine($"{item} = {(int)item}");
             }
         }
     }

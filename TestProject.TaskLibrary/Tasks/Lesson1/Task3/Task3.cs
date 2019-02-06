@@ -7,21 +7,20 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task3
 {
     public class Task3 : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("--------------------------Lesson1 Task3--------------------");
+            console.WriteLine("--------------------------Lesson1 Task3--------------------");
             double R = 0;
             while (R <= 0)
             {
-                Console.Write("Input radius of circle: ");
-                while (!Double.TryParse(Console.ReadLine(), out R))
+                console.Write("Input radius of circle: ");
+                while (!Double.TryParse(console.ReadLine(), out R))
                 {
-                    Console.WriteLine("Error");
+                    console.WriteLine("Error");
                 }
-                //Console.WriteLine("Cannot build circle! You must input correct values");
             }
-            Console.WriteLine($"Length is {Circle.Length(R)}.\nSquare is {Circle.Square(R)}.");
-            Console.WriteLine("-------------------------------------------------------");
+            console.WriteLine($"Length is {Circle.Length(R)}.\nSquare is {Circle.Square(R)}.");
+            console.WriteLine("-------------------------------------------------------");
         }
     }
 }

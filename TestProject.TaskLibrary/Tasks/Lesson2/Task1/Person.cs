@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestProject.Common.Core.Interfaces;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson2.Task1
 {
@@ -15,19 +16,19 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task1
             surname = snam;
             age = ag;
         }
-        public void MyMethod(int n)
+        public void MyMethod(int n, IConsole console)
         {
             if (n > 0)
             {
                 if (age > n)
                 {
-                    Console.WriteLine($"{name} {surname} older than {n}");
+                    console.WriteLine($"{name} {surname} older than {n}");
                 }
                 else
-                    Console.WriteLine($"{name} {surname} younger than {n}");
+                    console.WriteLine($"{name} {surname} younger than {n}");
             }
             else
-                Console.WriteLine("n must be > 0");
+                console.WriteLine("n must be > 0");
         }
     }
 }

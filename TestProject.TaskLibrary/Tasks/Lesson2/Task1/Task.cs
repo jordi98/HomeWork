@@ -7,31 +7,31 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task1
 {
     public class Task : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("------------------Lesson2 Task1-----------------------");
+            console.WriteLine("------------------Lesson2 Task1-----------------------");
             string name, surname;
             int age = 0, n;
-            Console.Write("Input name: ");
-            name = Console.ReadLine();
-            Console.Write("Input surname: ");
-            surname = Console.ReadLine();
-            Console.Write("Input age: ");
+            console.Write("Input name: ");
+            name = console.ReadLine();
+            console.Write("Input surname: ");
+            surname = console.ReadLine();
+            console.Write("Input age: ");
             while (age <= 0) 
             {
-                while (!Int32.TryParse(Console.ReadLine(), out age))
+                while (!Int32.TryParse(console.ReadLine(), out age))
                 {
-                    Console.WriteLine("Error");
+                    console.WriteLine("Error");
                 }
             }            
             Person person = new Person(name, surname, age);
-            Console.Write("Input n: ");
-            while (!Int32.TryParse(Console.ReadLine(), out n))
+            console.Write("Input n: ");
+            while (!Int32.TryParse(console.ReadLine(), out n))
             {
-                Console.WriteLine("Error");
+                console.WriteLine("Error");
             }
-            person.MyMethod(n);
-            Console.WriteLine("-----------------------------------------");
+            person.MyMethod(n, console);
+            console.WriteLine("-----------------------------------------");
         }
     }
 }

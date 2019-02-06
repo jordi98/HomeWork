@@ -9,14 +9,14 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task5
 
     public class Task : IRunnable
     {
-        public void Run()
+        public void Run(IConsole console)
         {
-            Console.WriteLine("------------------Lesson2 Task5-----------------------");
+            console.WriteLine("------------------Lesson2 Task5-----------------------");
             foreach (var item in Enum.GetValues(typeof(LongRange)))
             {
-                Console.WriteLine($"{item} = {(long)item}");
+                console.WriteLine($"{item} = {(long)item}");
             }
-            Console.WriteLine("------------------------------------------------------");
+            console.WriteLine("------------------------------------------------------");
         }
     }
 }
