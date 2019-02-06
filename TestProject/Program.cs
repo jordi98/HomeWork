@@ -17,7 +17,7 @@ namespace TestProject
 
             foreach (var task in tasks)
             {
-                task.Run();
+                task.Run(new Cons());
             }
             Console.ReadLine();
         }
