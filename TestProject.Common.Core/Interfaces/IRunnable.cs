@@ -7,6 +7,6 @@ namespace TestProject.Common.Core.Interfaces
 {
     public interface IRunnable
     {
-        void Run();
+        void Run(IConsole console);
     }
 }
