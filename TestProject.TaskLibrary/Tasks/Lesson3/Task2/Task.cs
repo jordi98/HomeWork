@@ -9,10 +9,33 @@ namespace TestProject.TaskLibrary.Tasks.Lesson3.Task2
     {
         public void Run(IConsole console)
         {
-            Rectangle rectangle = new Rectangle(1, 2);
+            console.WriteLine("------------------Lesson3 Task2-----------------------");
+            int rectX, rectY, sqX, sqY;
+            console.Write("Input X for rectangle: ");
+            while (!Int32.TryParse(console.ReadLine(), out rectX))
+            {
+                console.WriteLine("Error");
+            }
+            console.Write("Input Y for rectangle: ");
+            while (!Int32.TryParse(console.ReadLine(), out rectY))
+            {
+                console.WriteLine("Error");
+            }
+            Rectangle rectangle = new Rectangle(rectX, rectY);
             rectangle.Draw(console);
-            Square square = new Square(3, 4);
+            console.Write("Input X for square: ");
+            while (!Int32.TryParse(console.ReadLine(), out sqX))
+            {
+                console.WriteLine("Error");
+            }
+            console.Write("Input Y for square: ");
+            while (!Int32.TryParse(console.ReadLine(), out sqY))
+            {
+                console.WriteLine("Error");
+            }
+            Square square = new Square(sqX, sqY);
             square.Draw(console);
+            console.WriteLine("------------------------------------------------------");
         }
     }
 }
