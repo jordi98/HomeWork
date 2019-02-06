@@ -12,7 +12,7 @@ namespace TestProject
             var tasks = new IRunnable[]
             {
                 //new TaskLibrary.Tasks.Lesson1.Task1.Task1(),
-                new TaskLibrary.Tasks.Lesson3.Task2.Task()
+                new TaskLibrary.Tasks.Lesson3.Task3.Task()
             };
 
             foreach (var task in tasks)
