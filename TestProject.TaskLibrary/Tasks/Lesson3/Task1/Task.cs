@@ -9,10 +9,12 @@ namespace TestProject.TaskLibrary.Tasks.Lesson3.Task1
     {
         public void Run(IConsole console)
         {
+            console.WriteLine("------------------Lesson3 Task1-----------------------");
             Rectangle rectangle = new Rectangle();
             rectangle.Draw(console);
             Square square = new Square();
-            square.Draw(console);
+            square.Draw(console);            
+            console.WriteLine("------------------------------------------------------");
         }
     }
 }
