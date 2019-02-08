@@ -11,9 +11,9 @@ namespace TestProject
             //List of .NetLab Tasks
             var tasks = new IRunnable[]
             {
+                //new TaskLibrary.Udemy.Arrays.Task()
                 //new TaskLibrary.Tasks.Lesson1.Task1.Task1(),
-                //new TaskLibrary.Tasks.Lesson3.Task3.Task()
-                new TaskLibrary.Udemy.Arrays.Task()
+                new TaskLibrary.Tasks.Lesson3.Task4.Task()
             };
 
             foreach (var task in tasks)

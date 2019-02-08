@@ -9,7 +9,9 @@ namespace TestProject.TaskLibrary.Tasks.Lesson3.Task4
     {
         public void Run(IConsole console)
         {
+            console.WriteLine("------------------Lesson3 Task4-----------------------");
 
+            console.WriteLine("------------------------------------------------------");
         }
     }
 }
