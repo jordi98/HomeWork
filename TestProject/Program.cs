@@ -12,7 +12,8 @@ namespace TestProject
             var tasks = new IRunnable[]
             {
                 //new TaskLibrary.Tasks.Lesson1.Task1.Task1(),
-                new TaskLibrary.Tasks.Lesson3.Task3.Task()
+                //new TaskLibrary.Tasks.Lesson3.Task3.Task()
+                new TaskLibrary.Udemy.BasicExercices.Task()
             };
 
             foreach (var task in tasks)
