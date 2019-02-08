@@ -13,7 +13,7 @@ namespace TestProject
             {
                 //new TaskLibrary.Tasks.Lesson1.Task1.Task1(),
                 //new TaskLibrary.Tasks.Lesson3.Task3.Task()
-                new TaskLibrary.Udemy.DataTypes.Task()
+                new TaskLibrary.Udemy.ConditionalStatements.Task()
             };
 
             foreach (var task in tasks)
