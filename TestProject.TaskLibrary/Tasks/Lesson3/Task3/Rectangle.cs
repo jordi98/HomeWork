@@ -13,7 +13,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson3.Task3
         }
         public override void Draw(IConsole console)
         {
-            Console.WriteLine($"Class Rectangle {X} {Y}");
+            console.WriteLine($"Class Rectangle {X} {Y}");
         }
     }
 }

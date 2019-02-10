@@ -13,7 +13,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson3.Task2
         }
         public override void Draw(IConsole console)
         {
-            Console.WriteLine($"Class Square {X} {Y}");
+            console.WriteLine($"Class Square {X} {Y}");
         }
     }
 }
