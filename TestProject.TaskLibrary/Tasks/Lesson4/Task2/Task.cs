@@ -10,8 +10,27 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task2
         public void Run(IConsole console)
         {
             console.WriteLine("------------------Lesson4 Task2-----------------------");
-            int countDiv, countSimple = 0;
-            int[] array = new int[] { 3, 5, 7, 3, 5, 1, 4 };
+            int n, countDiv, countSimple = 0;
+            console.Write("Input array dim: ");
+            while (!Int32.TryParse(console.ReadLine(), out n))
+            {
+                console.WriteLine("Error");
+            }
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                console.Write($"Array[{i}]: ");
+                while (!Int32.TryParse(console.ReadLine(), out array[i]))
+                {
+                    console.WriteLine("Error");
+                }
+            }
+            console.Write("Your array: ");
+            for (int i = 0; i < n; i++)
+            {
+                console.Write($"{array[i]} ");
+            }
+            
             for (int i = 0; i < array.Length; i++)
             {
                 countDiv = 0;
@@ -26,10 +45,6 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task2
                 {
                     countSimple++;
                 }
-            }
-            for (int i = 0; i < array.Length; i++)
-            {
-                console.Write($"{array[i]} ");
             }
             console.WriteLine($"\nCount of simple numbers: {countSimple}");            
             console.WriteLine("------------------------------------------------------");
