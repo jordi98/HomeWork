@@ -1,6 +1,8 @@
 # HomeWork
 Made by Yuri Danchyshyn 
 
+Tacsks from Udemy are in folder TestProject.TaskLibrary/Udemy/
+
 Lessons tasks
 
 In folder TestProject.TaskLibrary/Tasks/ there are lessons.
