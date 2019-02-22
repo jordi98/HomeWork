@@ -115,24 +115,20 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
 
         public void Draw(IConsole console, char[,] axis)
         {
-            this.AB = XCoorC - XCoorA;
-            this.BC = YCoorA - YCoorC;
+            this.AB = this.XCoorC - this.XCoorA;
+            this.BC = this.YCoorA - this.YCoorC;
             int n = this.BC + 1, m = this.AB * 2 + 1;
             char[,] rectangle = new char[n, m];
             for (int y = 0; y < n; y++)
             {
                 for (int x = 0; x < m; x++)
                 {
-                    //rectangle[y, x] = ' ';
                     if (x % 2 == 0 && ((x == 0 || x == m - 1) || (y == 0 || y == n - 1)))
                     {
                         rectangle[y, x] = '.';
                     }
                 }
             }
-
-            //rectangle[0, 0] = 'A';
-            //rectangle[n - 1, m - 1] = 'C';
             for (int y = 0; y < n; y++)
             {
                 for (int x = 0; x < m; x++)
