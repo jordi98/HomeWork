@@ -67,33 +67,42 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
             {
                 var rectangle1 = new Rectangle(xA, yA, xC, yC);
                 rectangle1.Draw(console, axis);
+                console.WriteLine("First rectangle:\n");
                 Axis.Draw(console, axis);
                 Axis.Set(axis);
                 rectangle1 = rectangle1.Move(1, 1);
                 rectangle1.Draw(console, axis);
+                console.WriteLine("Removed first rectangle by 1 on Ox and 1 on Oy:\n");
                 Axis.Draw(console, axis);
                 Axis.Set(axis);
-                rectangle1.Move(1, 1).ChangeShape(1, 1).Draw(console, axis);
+                rectangle1 = rectangle1.ChangeShape(1, (-1) * 1);
+                rectangle1.Draw(console, axis);
+                console.WriteLine("Resized first rectangle:\n");
                 Axis.Draw(console, axis);
 
                 if (xC2 > xA2 && yA2 > yC2)
                 {
                     var rectangle2 = new Rectangle(xA2, yA2, xC2, yC2);
                     rectangle2.Draw(console, axis);
+                    console.WriteLine("Second rectangle:\n");
                     Axis.Draw(console, axis);
                     if (rectangle2.XCoorA < rectangle1.XCoorC && rectangle2.XCoorC > rectangle1.XCoorA
-                        && rectangle2.YCoorA > rectangle1.YCoorC && rectangle2.YCoorC < rectangle1.YCoorA)
+                        && rectangle2.YCoorA > rectangle1.YCoorC && rectangle2.YCoorC < rectangle1.YCoorA
+                        && !(rectangle1.XCoorA <= rectangle2.XCoorA && rectangle2.XCoorC <= rectangle1.XCoorC 
+                        && rectangle2.YCoorA <= rectangle1.YCoorA && rectangle1.YCoorC <= rectangle2.YCoorC))
                     {
                         Axis.Set(axis);
                         Rectangle.BuildRectThatIsCrossedByTwoRect(rectangle1, rectangle2).Draw(console, axis);
+                        console.WriteLine("Rectangle that is crossed by two rectangles:\n");
                         Axis.Draw(console, axis);
                     }
                     else
                     {
                         console.WriteLine("Cannot build rectangle! You must input correct values");
                     }
-
+                    Axis.Set(axis);
                     Rectangle.BuildMinRectThatContainTwoRect(rectangle1, rectangle2).Draw(console, axis);
+                    console.WriteLine("Min rectangle that contain two rectangles:\n");
                     Axis.Draw(console, axis);
                 }
                 else
