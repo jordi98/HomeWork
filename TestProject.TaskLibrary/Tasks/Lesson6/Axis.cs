@@ -9,9 +9,11 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6
     {
         public static void Draw(IConsole console, char[,] axis)
         {
-            for (int y = 0; y < 41; y++)
+            int rows = axis.GetUpperBound(0) + 1;
+            int columns = axis.Length / rows;
+            for (int y = 0; y < rows; y++)
             {
-                for (int x = 0; x < 82; x++)
+                for (int x = 0; x < columns; x++)
                 {
                     console.Write($"{axis[y, x]}");
                 }
@@ -22,17 +24,19 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6
 
         public static void Set(char[,] axis)
         {
-            for (int y = 0; y < 41; y++)
+            int rows = axis.GetUpperBound(0) + 1;
+            int columns = axis.Length / rows;
+            for (int y = 0; y < rows; y++)
             {
-                for (int x = 0; x < 82; x++)
+                for (int x = 0; x < columns; x++)
                 {
                     axis[y, x] = ' ';
-                    if ((y == 20 && x % 2 != 0) || (x == 41))
+                    if ((y == (rows - 1) / 2 && x % 2 != 0) || (x == columns / 2))
                     {
                         axis[y, x] = '+';
                     }
 
-                    if (y == 20 && x == 41)
+                    if (y == (rows - 1) / 2 && x == columns / 2)
                     {
                         axis[y, x] = '0';
                     }
