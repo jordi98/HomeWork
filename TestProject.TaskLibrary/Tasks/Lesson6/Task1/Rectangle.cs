@@ -5,16 +5,26 @@ using TestProject.Common.Core.Interfaces;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
 {
-    internal class Rectangle 
+    internal class Rectangle : IDraw
     {
+        public Rectangle()
+        {
+            this.XCoorA = 0;
+            this.YCoorA = 0;
+            this.XCoorC = 0;
+            this.YCoorC = 0;
+            this.AB = this.XCoorC - this.XCoorA;
+            this.BC = this.YCoorA - this.YCoorC;
+        }
+
         public Rectangle(int xA, int yA, int xC, int yC)
         {
             this.XCoorA = xA;
             this.YCoorA = yA;
             this.XCoorC = xC;
             this.YCoorC = yC;
-            this.AB = xC - xA;
-            this.BC = yA - yC;
+            this.AB = this.XCoorC - this.XCoorA;
+            this.BC = this.YCoorA - this.YCoorC;
         }
 
         public int XCoorA { get; set; }
@@ -29,9 +39,9 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
 
         public int BC { get; set; }
 
-        public static Rectangle BuildMinRectThatContainTwoRect(Rectangle rectangle1, Rectangle rectangle2)
+        public Rectangle BuildMinRectThatContainTwoRect(Rectangle rectangle1, Rectangle rectangle2)
         {
-            var minRect = new Rectangle(0, 0, 0, 0);
+            var minRect = new Rectangle();
             if (rectangle1.YCoorA >= rectangle2.YCoorA)
             {
                 minRect.YCoorA = rectangle1.YCoorA;
@@ -71,9 +81,9 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
             return minRect;
         }
 
-        public static Rectangle BuildRectThatIsCrossedByTwoRect(Rectangle rectangle1, Rectangle rectangle2)
+        public Rectangle BuildRectThatIsCrossedByTwoRect(Rectangle rectangle1, Rectangle rectangle2)
         {
-            var rect = new Rectangle(0, 0, 0, 0);
+            var rect = new Rectangle();
             if (rectangle2.XCoorA >= rectangle1.XCoorA)
             {
                 rect.XCoorA = rectangle2.XCoorA;
@@ -115,6 +125,8 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
 
         public void Draw(IConsole console, char[,] axis)
         {
+            int rows = axis.GetUpperBound(0) + 1;
+            int columns = axis.Length / rows;
             this.AB = this.XCoorC - this.XCoorA;
             this.BC = this.YCoorA - this.YCoorC;
             int n = this.BC + 1, m = this.AB * 2 + 1;
@@ -129,14 +141,21 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
                     }
                 }
             }
+
             for (int y = 0; y < n; y++)
             {
                 for (int x = 0; x < m; x++)
                 {
-                    axis[y + 20 - this.YCoorA, x + 41 + this.XCoorA * 2] = rectangle[y, x];
+                    if (axis[y + (rows - 1) / 2 - this.YCoorA, x + columns / 2 + this.XCoorA * 2] == '.')
+                    {
+                        axis[y + (rows - 1) / 2 - this.YCoorA, x + columns / 2 + this.XCoorA * 2] = '.';
+                    }
+                    else
+                    {
+                        axis[y + (rows - 1) / 2 - this.YCoorA, x + columns / 2 + this.XCoorA * 2] = rectangle[y, x];
+                    }
                 }
             }
-            
         }
 
         public Rectangle Move(int x, int y)
