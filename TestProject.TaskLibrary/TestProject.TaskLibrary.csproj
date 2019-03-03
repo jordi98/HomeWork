@@ -8,4 +8,11 @@
     <ProjectReference Include="..\TestProject.Common.Core\TestProject.Common.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Tasks\Lesson4\Task5\Task.cs">
+      <ExcludeFromSourceAnalysis>True</ExcludeFromSourceAnalysis>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+  </ItemGroup>
+
 </Project>
