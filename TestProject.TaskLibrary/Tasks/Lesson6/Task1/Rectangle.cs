@@ -39,6 +39,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
 
         public int BC { get; set; }
 
+        #region BuildMinRectThatContainTwoRect
         public Rectangle BuildMinRectThatContainTwoRect(Rectangle rectangle1, Rectangle rectangle2)
         {
             var minRect = new Rectangle();
@@ -81,6 +82,9 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
             return minRect;
         }
 
+        #endregion
+
+        #region BuildRectThatIsCrossedByTwoRect
         public Rectangle BuildRectThatIsCrossedByTwoRect(Rectangle rectangle1, Rectangle rectangle2)
         {
             var rect = new Rectangle();
@@ -123,6 +127,9 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
             return rect;
         }
 
+        #endregion
+
+        #region DrawMethod
         public void Draw(IConsole console, char[,] axis)
         {
             int rows = axis.GetUpperBound(0) + 1;
@@ -157,6 +164,8 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task1
                 }
             }
         }
+
+        #endregion
 
         public Rectangle Move(int x, int y)
         {
