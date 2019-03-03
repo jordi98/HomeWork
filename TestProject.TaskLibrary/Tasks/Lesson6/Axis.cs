@@ -15,6 +15,21 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6
             {
                 for (int x = 0; x < columns; x++)
                 {
+                    if (((y == (rows - 1) / 2 && x % 2 != 0) || (x == columns / 2)))
+                    {
+                        if (axis[y, x] == ' ')
+                        {
+                            axis[y, x] = '+';
+                        }
+                    }
+
+                    if ((y == (rows - 1) / 2 && x == columns / 2))
+                    {
+                        if (axis[y, x] == ' ')
+                        {
+                            axis[y, x] = '0';
+                        }
+                    }
                     console.Write($"{axis[y, x]}");
                 }
 
