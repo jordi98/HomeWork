@@ -7,28 +7,34 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task1
 {
     public struct Person
     {
-        public string name;
-        public string surname;
-        public int age;
+        public string Name;
+        public string Surname;
+        public int Age;
+
         public Person(string nam, string snam, int ag)
         {
-            name = nam;
-            surname = snam;
-            age = ag;
+            this.Name = nam;
+            this.Surname = snam;
+            this.Age = ag;
         }
+
         public void MyMethod(int n, IConsole console)
         {
             if (n > 0)
             {
-                if (age > n)
+                if (this.Age > n)
                 {
-                    console.WriteLine($"{name} {surname} older than {n}");
+                    console.WriteLine($"{this.Name} {this.Surname} older than {n}");
                 }
                 else
-                    console.WriteLine($"{name} {surname} younger than {n}");
+                {
+                    console.WriteLine($"{this.Name} {this.Surname} younger than {n}");
+                }
             }
             else
+            {
                 console.WriteLine("n must be > 0");
+            }
         }
     }
 }

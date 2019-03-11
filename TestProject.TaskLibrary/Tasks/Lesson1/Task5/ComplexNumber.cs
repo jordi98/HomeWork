@@ -8,24 +8,16 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task5
     {
         private double real;
         private double imaginary;
-
-        public double Imaginary
-        {
-            get { return imaginary; }
-            set { imaginary = value; }
-        }
-
-        public double Real
-        {
-            get { return real; }
-            set { real = value; }
-        }
-
+        
         public ComplexNumber(double re, double im)
         {
-            real = re;
-            imaginary = im;
+            this.real = re;
+            this.imaginary = im;
         }
+
+        public double Imaginary { get; set; }
+
+        public double Real { get; set; }
 
         #region A+B
         public static ComplexNumber operator +(ComplexNumber a, ComplexNumber b)

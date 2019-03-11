@@ -12,27 +12,30 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task4
             console.WriteLine("------------------Lesson4 Task4-----------------------");
             int n, m;
             console.Write("Input array dim m: ");
-            while (!Int32.TryParse(console.ReadLine(), out m))
+            while (!int.TryParse(console.ReadLine(), out m))
             {
                 console.WriteLine("Error");
             }
+
             console.Write("Input array dim n: ");
-            while (!Int32.TryParse(console.ReadLine(), out n))
+            while (!int.TryParse(console.ReadLine(), out n))
             {
                 console.WriteLine("Error");
             }
+
             int[,] array = new int[m, n];
             for (int i = 0; i < m; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
                     console.Write($"Array[{i}][{j}]: ");
-                    while (!Int32.TryParse(console.ReadLine(), out array[i, j]))
+                    while (!int.TryParse(console.ReadLine(), out array[i, j]))
                     {
                         console.WriteLine("Error");
                     }
                 }
             }
+
             console.WriteLine("Your array: ");
             for (int i = 0; i < m; i++)
             {
@@ -40,8 +43,10 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task4
                 {
                     console.Write($"{array[i, j]} ");
                 }
+
                 console.Write("\n");
             }
+
             int[] vector = new int[m];            
             for (int i = 0; i < m; i++)
             {
@@ -54,11 +59,13 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task4
                     }
                 }
             }
+
             console.Write("Vector:\n");
             for (int i = 0; i < m; i++)
             {
                 console.Write($"{vector[i]} ");
             }
+
             console.WriteLine("\n------------------------------------------------------");
         }
     }

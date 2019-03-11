@@ -12,6 +12,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task4
         {
             return 2 * PI * r;
         }
+
         public static double Square(double r)
         {
             return PI * r * r;

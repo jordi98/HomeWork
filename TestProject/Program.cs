@@ -8,12 +8,11 @@ namespace TestProject
     {
         static void Main(string[] args)
         {
-            //List of .NetLab Tasks
+            ////List of .NetLab Tasks
             var tasks = new IRunnable[]
             {
-                //new TaskLibrary.Udemy.Arrays.Task()
-                //new TaskLibrary.Tasks.Lesson1.Task1.Task1(),
-                new TaskLibrary.Tasks.Lesson6.Task2.Task()
+                ////new TaskLibrary.Udemy.Arrays.Task()
+                new TaskLibrary.Tasks.Lesson10.Task4.Task()
             };
 
             foreach (var task in tasks)

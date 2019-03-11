@@ -5,7 +5,16 @@ using TestProject.Common.Core.Interfaces;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson2.Task4
 {
-    enum Colors { Red = 5, Blue = 4, White = 6, Black = 3, Green = 1, Yellow = 2, Violet = 7 }
+    enum Colors
+    {
+        Red = 5,
+        Blue = 4,
+        White = 6,
+        Black = 3,
+        Green = 1,
+        Yellow = 2,
+        Violet = 7
+    }
 
     public static class Extensions
     {

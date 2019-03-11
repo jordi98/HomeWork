@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson5
 {
-    class Person
+    internal class Person
     {
         public string Name { get; set; }
 

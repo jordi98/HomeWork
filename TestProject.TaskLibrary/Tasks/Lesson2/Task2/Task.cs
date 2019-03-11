@@ -14,37 +14,42 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task2
             console.Write("Input width: ");
             while (width <= 0)
             {
-                while (!Double.TryParse(console.ReadLine(), out width))
+                while (!double.TryParse(console.ReadLine(), out width))
                 {
                     console.WriteLine("Error");
                 }
-            }            
+            }
+
             console.Write("Input height: ");
             while (height <= 0)
             {
-                while (!Double.TryParse(console.ReadLine(), out height))
+                while (!double.TryParse(console.ReadLine(), out height))
                 {
                     console.WriteLine("Error");
                 }
             }
+
             console.Write("Input x: ");
-            while (!Double.TryParse(console.ReadLine(), out x))
+            while (!double.TryParse(console.ReadLine(), out x))
             {
                 console.WriteLine("Error");
             }
+
             console.Write("Input y: ");
-            while (!Double.TryParse(console.ReadLine(), out y))
+            while (!double.TryParse(console.ReadLine(), out y))
             {
                 console.WriteLine("Error");
             }
-            Rectangle rectangle = new Rectangle();
-            rectangle.Width = width;
-            rectangle.Height = height;
-            rectangle.X = x;
-            rectangle.Y = y;
+
+            Rectangle rectangle = new Rectangle
+            {
+                Width = width,
+                Height = height,
+                X = x,
+                Y = y
+            };
             console.WriteLine($"Perimeter is {rectangle.Perimeter()}");
             console.WriteLine("--------------------------------------------------");
-
         }
     }
 }

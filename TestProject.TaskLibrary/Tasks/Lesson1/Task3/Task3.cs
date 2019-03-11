@@ -10,16 +10,17 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task3
         public void Run(IConsole console)
         {
             console.WriteLine("--------------------------Lesson1 Task3--------------------");
-            double R = 0;
-            while (R <= 0)
+            double radius = 0;
+            while (radius <= 0)
             {
                 console.Write("Input radius of circle: ");
-                while (!Double.TryParse(console.ReadLine(), out R))
+                while (!double.TryParse(console.ReadLine(), out radius))
                 {
                     console.WriteLine("Error");
                 }
             }
-            console.WriteLine($"Length is {Circle.Length(R)}.\nSquare is {Circle.Square(R)}.");
+
+            console.WriteLine($"Length is {Circle.Length(radius)}.\nSquare is {Circle.Square(radius)}.");
             console.WriteLine("-------------------------------------------------------");
         }
     }

@@ -10,39 +10,44 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task5
         public void Run(IConsole console)
         {
             console.WriteLine("--------------------------Lesson1 Task5--------------------");
-            double Are = 0, Aim = 0, Bre = 0, Bim = 0;
+            double reA = 0, imA = 0, reB = 0, imB = 0;
             console.WriteLine("Number A\nInput real part: ");
-            while (!Double.TryParse(console.ReadLine(), out Are))
+            while (!double.TryParse(console.ReadLine(), out reA))
             {
                 console.WriteLine("Error");
             }
+
             console.WriteLine("Input imaginary part: ");
-            while (!Double.TryParse(console.ReadLine(), out Aim))
+            while (!double.TryParse(console.ReadLine(), out imA))
             {
                 console.WriteLine("Error");
             }
+
             console.WriteLine("Number B\nInput real part: ");
-            while (!Double.TryParse(console.ReadLine(), out Bre))
+            while (!double.TryParse(console.ReadLine(), out reB))
             {
                 console.WriteLine("Error");
             }
+
             console.WriteLine("Input imaginary part: ");
-            while (!Double.TryParse(console.ReadLine(), out Bim))
+            while (!double.TryParse(console.ReadLine(), out imB))
             {
                 console.WriteLine("Error");
             }
-            ComplexNumber A = new ComplexNumber(Are, Aim);
-            ComplexNumber B = new ComplexNumber(Bre, Bim);
-            console.WriteLine($"Sum is {(A + B).Real} + {(A + B).Imaginary}i.\n" +
-                $"Mult is {(A * B).Real} + {(A * B).Imaginary}i.");
-            if (Bre != 0 && Bim != 0)
+
+            ComplexNumber a = new ComplexNumber(reA, imA);
+            ComplexNumber b = new ComplexNumber(reB, imB);
+            console.WriteLine($"Sum is {(a + b).Real} + {(a + b).Imaginary}i.\n" +
+                $"Mult is {(a * b).Real} + {(a * b).Imaginary}i.");
+            if (reB != 0 && imB != 0)
             {
-                console.WriteLine($"Div is {(A / B).Real} + {(A / B).Imaginary}i");
+                console.WriteLine($"Div is {(a / b).Real} + {(a / b).Imaginary}i");
             }
             else
             {
                 console.WriteLine("Error! Division by 0");
             }
+
             console.WriteLine("-------------------------------------------------------");
         }
     }

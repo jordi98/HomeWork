@@ -6,31 +6,24 @@ namespace TestProject.TaskLibrary.Tasks.Lesson1.Task4
 {
     static class Rectangle
     {
-        private static double ab;
-        private static double bc;
+        public static double AB { get; set; }
 
-        public static double AB
+        public static double BC { get; set; }
+
+        public static void SetSides(double xA, double yA, double xC, double yC)
         {
-            get { return ab; }
-            set { ab = value; }
+            AB = xC - xA;
+            BC = yA - yC;
         }
-        public static double BC
-        {
-            get { return bc; }
-            set { bc = value; }
-        }
-        public static void SetSides(double Ax, double Ay, double Cx, double Cy)
-        {
-            ab = Cx - Ax;
-            bc = Ay - Cy;
-        }
+
         public static double Perimeter()
         {            
-            return 2 * (ab + bc);
+            return 2 * (AB + BC);
         }
+
         public static double Square()
         {
-            return ab * bc;
+            return AB * BC;
         }
     }
 }

@@ -15,8 +15,10 @@ namespace TestProject.TaskLibrary.Tasks.Lesson5.Task3
             {
                 result.Append(characters[random.Next(characters.Length)]);
             }
+
             return result.ToString();
         }
+
         public List<string> RemoveDuplicates(List<string> list)
         {
             var result = new List<string>();
@@ -24,10 +26,14 @@ namespace TestProject.TaskLibrary.Tasks.Lesson5.Task3
             for (int i = 0; i < list.Count; i++)
             {
                 if (!result.Contains(list[i]))
+                {
                     result.Add(list[i]);
+                }
             }
+
             return result;
         }
+
         public void DisplayPage(IConsole console, List<string> list, int pageNumber)
         {
             var countPages = (int)Math.Ceiling(list.Count / 5.0);            
@@ -54,6 +60,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson5.Task3
                 console.WriteLine("Error!");
             }
         }
+
         public void Run(IConsole console)
         {
             console.WriteLine("------------------Lesson5 Task3-----------------------");
@@ -61,15 +68,17 @@ namespace TestProject.TaskLibrary.Tasks.Lesson5.Task3
             Random rnd = new Random();
             var list = new List<string>();
             console.Write("Input number of items in the list: ");
-            while (!Int32.TryParse(console.ReadLine(), out numberOfItemsInList))
+            while (!int.TryParse(console.ReadLine(), out numberOfItemsInList))
             {
                 console.WriteLine("Error!");
             }
+
             for (int i = 0; i < numberOfItemsInList; i++)
             {
-                list.Add(GenerateElements(4, rnd));
+                list.Add(this.GenerateElements(4, rnd));
             }
-            var noDupList = RemoveDuplicates(list);
+
+            var noDupList = this.RemoveDuplicates(list);
             for (int i = 0; i < noDupList.Count; i++)
             {
                 if (noDupList[i][0] == 'Z')
@@ -77,19 +86,21 @@ namespace TestProject.TaskLibrary.Tasks.Lesson5.Task3
                     noDupList.RemoveAt(i);
                 }
             }
+
             noDupList.Sort();
             noDupList.Reverse();
             console.WriteLine($"Count before: {list.Count} ({(int)Math.Ceiling(list.Count / 5.0)} pages)");
             console.WriteLine($"Count after: {noDupList.Count} ({(int)Math.Ceiling(noDupList.Count / 5.0)} pages)");
             console.Write($"Input number of page: ");
-            if (!Int32.TryParse(console.ReadLine(), out pageNumber))
+            if (!int.TryParse(console.ReadLine(), out pageNumber))
             {
                 console.WriteLine("Error!");
             }
             else
             {
-                DisplayPage(console, noDupList, pageNumber);
+                this.DisplayPage(console, noDupList, pageNumber);
             }
+
             console.WriteLine("\n------------------------------------------------------");
         }
     }

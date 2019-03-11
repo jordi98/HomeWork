@@ -4,34 +4,37 @@ using System.Text;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson1.Task1
 {
-    class Rectangle
+    internal class Rectangle
     {
         private double ab;
         private double bc;
+        
+        public Rectangle(double xA, double yA, double xC, double yC)
+        {
+            this.ab = xC - xA;
+            this.bc = yA - yC;
+        }
 
         public double AB
         {
-            get { return ab; }
-            set { ab = value; }
-        }
-        public double BC
-        {
-            get { return bc; }
-            set { bc = value; }
+            get { return this.ab; }
+            set { this.ab = value; }
         }
 
-        public Rectangle(double Ax, double Ay, double Cx, double Cy)
+        public double BC
         {
-            ab = Cx - Ax;
-            bc = Ay - Cy;
+            get { return this.bc; }
+            set { this.bc = value; }
         }
+
         public double Perimeter()
         {
-            return 2 * (ab + bc);
+            return 2 * (this.ab + this.bc);
         }
+
         public double Square()
         {
-            return ab * bc;
+            return this.ab * this.bc;
         }
     }
 }

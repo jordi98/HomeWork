@@ -10,12 +10,13 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task5
         public void Run(IConsole console)
         {
             console.WriteLine("------------------Lesson4 Task5-----------------------");
-            int n, m;
+            int m;
             console.Write("Input array dim m: ");
-            while (!Int32.TryParse(console.ReadLine(), out m))
+            while (!int.TryParse(console.ReadLine(), out m))
             {
                 console.WriteLine("Error");
             }
+
             int[][] array = new int[m][];
             for (int i = 0; i < m; i++)
             {
@@ -23,12 +24,13 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task5
                 for (int j = 0; j < array[i].Length; j++)
                 {
                     console.Write($"Array[{i}][{j}]: ");
-                    while (!Int32.TryParse(console.ReadLine(), out array[i][j]))
+                    while (!int.TryParse(console.ReadLine(), out array[i][j]))
                     {
                         console.WriteLine("Error");
                     }
                 }
             }
+
             console.WriteLine("Your array: ");
             for (int i = 0; i < m; i++)
             {
@@ -36,8 +38,10 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task5
                 {
                     console.Write($"{array[i][j]} ");
                 }
+
                 console.Write("\n");
             }
+
             int[] vector = new int[m];
             for (int i = 0; i < m; i++)
             {
@@ -50,11 +54,13 @@ namespace TestProject.TaskLibrary.Tasks.Lesson4.Task5
                     }
                 }
             }
+
             console.Write("Vector:\n");
             for (int i = 0; i < m; i++)
             {
                 console.Write($"{vector[i]} ");
             }
+
             console.WriteLine("\n------------------------------------------------------");
         }
     }

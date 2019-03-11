@@ -5,7 +5,11 @@ using TestProject.Common.Core.Interfaces;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson2.Task5
 {
-    enum LongRange : long { Max = 9223372036854775807, Min = -9223372036854775808 }
+    internal enum LongRange : long
+    {
+        Max = 9223372036854775807,
+        Min = -9223372036854775808
+    }
 
     public class Task : IRunnable
     {
@@ -16,6 +20,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson2.Task5
             {
                 console.WriteLine($"{item} = {(long)item}");
             }
+
             console.WriteLine("------------------------------------------------------");
         }
     }

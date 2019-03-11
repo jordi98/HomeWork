@@ -5,7 +5,7 @@ using TestProject.Common.Core.Interfaces;
 
 namespace TestProject.TaskLibrary.Tasks.Lesson3.Task1
 {
-    public class Task: IRunnable
+    public class Task : IRunnable
     {
         public void Run(IConsole console)
         {

@@ -11,6 +11,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson3.Task3
         {
 
         }
+
         public override void Draw(IConsole console)
         {
             console.WriteLine($"Class Square {X} {Y}");

@@ -11,9 +11,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson6.Task2
         {
             console.WriteLine("------------------Lesson6 Task2-----------------------");
             int xO = 0, yO = 0, radius = 0, xO2 = 0, yO2 = 0, radius2 = 0;
-            //int xO = 10, yO = 0, radius = 7, xO2 = 15, yO2 = 2, radius2 = 8;
-            int k = 1;
-            int n = 60;
+            int k = 1, n = 60;
             while (k != 0)
             {
                 var circle1 = new Circle(xO, yO, radius);
