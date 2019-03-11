@@ -1,15 +1,39 @@
-# HomeWork
-Made by Yuri Danchyshyn 
+# Home Work
 
-Tacsks from Udemy are in folder TestProject.TaskLibrary/Udemy/
+Lesson tasks and Udemy tasks
 
-Lessons tasks
+## How to run it
 
-In folder TestProject.TaskLibrary/Tasks/ there are lessons.
+Firstly you need to download this project. After this you need to open it in Visual Studio 2017(or other version).
+If you want to run some task, you should open file Program.cs and write like this:
+```
+var tasks = new IRunnable[]
+{
+    new TaskLibrary.Tasks.Lesson1.Task1.Task()
+};
 
-In folder TestProject.TaskLibrary/Tasks/Lesson1/ there are 5 tasks. 
+foreach (var task in tasks)
+{
+    task.Run(new Cons());
+}
+```
+In this example I run 1st task of 1st lesson task. Want to run more tasks? Simply add new task to tasks. For example:
+```
+var tasks = new IRunnable[]
+{
+    new TaskLibrary.Tasks.Lesson1.Task1.Task()
+    new TaskLibrary.Tasks.Lesson1.Task2.Task()
+    new TaskLibrary.Tasks.Lesson1.Task3.Task()
+};
 
-05.02.18
+foreach (var task in tasks)
+{
+    task.Run(new Cons());
+}
+```
+Similarly you could run Udemy tasks.
+Lesson tasks are in folder TestProject.TaskLibrary/Tasks/. Udemy tasks are in folder TestProject.TaskLibrary/Udemy/.
 
-Add Lesson2 folder in TestProject.TaskLibrary/Tasks/ .
-In folder TestProject.TaskLibrary/Tasks/Lesson2/ add 5 tasks.
+## Author
+
+* **Yurii Danchyshyn** - [jordi98](https://github.com/jordi98)
