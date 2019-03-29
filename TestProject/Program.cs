@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TestProject.Common.Core.Interfaces;
 
@@ -8,16 +9,14 @@ namespace TestProject
     {
         static void Main(string[] args)
         {
-            ////List of .NetLab Tasks
-            var tasks = new IRunnable[]
+            try
             {
-                ////new TaskLibrary.Udemy.Arrays.Task()
-                new TaskLibrary.Tasks.Lesson10.Task4.Task()
-            };
-
-            foreach (var task in tasks)
+                IRunnable runnable = LoggerProviderFactory.GetTask(14, 2);
+                runnable.Run(new Cons());
+            }
+            catch (KeyNotFoundException e)
             {
-                task.Run(new Cons());
+                Console.WriteLine(e.Message);
             }
 
             Console.ReadLine();
