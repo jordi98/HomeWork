@@ -9,9 +9,12 @@ namespace TestProject
     {
         static void Main(string[] args)
         {
+            int lessonNumber, taskNumber;
             try
             {
-                IRunnable runnable = LoggerProviderFactory.GetTask(14, 2);
+                lessonNumber = 14;
+                taskNumber = 2;
+                IRunnable runnable = LoggerProviderFactory.GetTask(lessonNumber, taskNumber);
                 runnable.Run(new Cons());
             }
             catch (KeyNotFoundException e)
