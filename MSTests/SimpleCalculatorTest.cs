@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestProject.Common.Core.Interfaces;
+using TestProject.TaskLibrary.Tasks.Lesson15;
 using TestProject.TaskLibrary.Tasks.Lesson15.Task1;
 
 namespace MSTests
@@ -6,11 +8,19 @@ namespace MSTests
     [TestClass]
     public class SimpleCalculatorTest
     {
+        private ICalculator<int> calculator;
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            this.calculator = new SimpleCalculator();
+        }
+
         [TestMethod]
         public void AddTest()
         {
             int a = 5, b = 5, expected = 10;
-            int actual = SimpleCalculator.Add(a, b);
+            int actual = this.calculator.Add(a, b);
             Assert.AreEqual(expected, actual);
         }
 
@@ -18,7 +28,7 @@ namespace MSTests
         public void SubTest()
         {
             int a = 5, b = 5, expected = 0;
-            int actual = SimpleCalculator.Sub(a, b);
+            int actual = this.calculator.Sub(a, b);
             Assert.AreEqual(expected, actual);
         }
 
@@ -26,7 +36,7 @@ namespace MSTests
         public void MulTest()
         {
             int a = 5, b = 5, expected = 25;
-            int actual = SimpleCalculator.Mul(a, b);
+            int actual = this.calculator.Mul(a, b);
             Assert.AreEqual(expected, actual);
         }
 
@@ -34,7 +44,7 @@ namespace MSTests
         public void DivTest()
         {
             int a = 5, b = 5, expected = 1;
-            int actual = SimpleCalculator.Div(a, b);
+            int actual = this.calculator.Div(a, b);
             Assert.AreEqual(expected, actual);
         }
     }
