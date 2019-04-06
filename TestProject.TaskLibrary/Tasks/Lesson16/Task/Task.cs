@@ -11,7 +11,7 @@ namespace TestProject.TaskLibrary.Tasks.Lesson16.Task
         public void Run(IConsole console)
         {
             console.WriteLine("------------------Lesson16 Task1-----------------------");
-            Assembly assembly = Assembly.LoadFile(@"C:\Users\user\Desktop\Epam\.Net-Lab-master\VectorLibrary\bin\Debug\netcoreapp2.1\VectorLibrary.dll");
+            Assembly assembly = Assembly.LoadFile(@"C:\Users\user\Desktop\Epam\VectorLibrary.dll");
             foreach (var item in assembly.GetModules(true))
             {
                 console.WriteLine($"{item}");
