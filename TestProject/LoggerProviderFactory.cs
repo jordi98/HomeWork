@@ -85,6 +85,10 @@ namespace TestProject
             {
                 { 1, new TaskLibrary.Tasks.Lesson16.Task.Task() }
             };
+            var lesson17 = new Dictionary<int, IRunnable>
+            {
+                { 1, new TaskLibrary.Tasks.Lesson17.Task1.Task() }
+            };
 
             dic.Add(1, lesson1);
             dic.Add(2, lesson2);
@@ -98,6 +102,7 @@ namespace TestProject
             dic.Add(13, lesson13);
             dic.Add(14, lesson14);
             dic.Add(16, lesson16);
+            dic.Add(17, lesson17);
 
             try
             {
