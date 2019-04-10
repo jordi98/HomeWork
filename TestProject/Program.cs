@@ -12,7 +12,7 @@ namespace TestProject
             int lessonNumber, taskNumber;
             try
             {
-                lessonNumber = 16;
+                lessonNumber = 17;
                 taskNumber = 1;
                 IRunnable runnable = LoggerProviderFactory.GetTask(lessonNumber, taskNumber);
                 runnable.Run(new Cons());
